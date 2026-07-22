@@ -47,6 +47,17 @@ fallback if the feed can't be reached.
 Same license as the main site: Creative Commons
 Attribution-NonCommercial-NoDerivs 3.0.
 
+## Languages
+
+Trigger phrase recognition (`locale/<lang>/voices_of_tomorrow.voc`) and
+Skills Store metadata (`locale/<lang>/skill.json`) are bundled for 10
+languages: English, Danish, German, Spanish, French, Italian, Dutch,
+Portuguese, Swedish, and Norwegian - the 8 languages shared with the
+rest of this provider family, plus Swedish and Norwegian. The actual
+episode titles and audio stay English (the source content isn't
+translated), same as `ovos-skill-arxiv-papers`/`ovos-skill-ovosblog`
+not translating their proper-noun collection names.
+
 ## Examples
 - "play voices of tomorrow"
 - "play the 365tomorrows podcast"

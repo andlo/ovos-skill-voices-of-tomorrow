@@ -1,0 +1,13 @@
+{
+  "skill_id": "ovos-skill-voices-of-tomorrow.andlo",
+  "source": "https://github.com/andlo/ovos-skill-voices-of-tomorrow",
+  "package_name": "ovos-skill-voices-of-tomorrow",
+  "pip_spec": "ovos-skill-voices-of-tomorrow",
+  "license": "GPL-3.0-or-later",
+  "author": "andlo",
+  "name": "Voices of Tomorrow",
+  "description": "Riproduce letture preregistrate da 365tomorrows.com tramite OCP. Separato da ovos-skill-365tomorrows-stories, che invece legge il testo ad alta voce tramite TTS.",
+  "examples": ["riproduci voices of tomorrow", "riproduci il podcast 365tomorrows"],
+  "tags": ["entertainment", "scifi", "podcast", "ocp"],
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-voices-of-tomorrow/main/ui/icon.png"
+}

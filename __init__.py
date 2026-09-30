@@ -72,7 +72,12 @@ class VoicesOfTomorrowSkill(OVOSCommonPlaybackSkill):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args,
-                          supported_media=[MediaType.PODCAST, MediaType.AUDIO],
+                          # GENERIC too: OCP classifies "play voices of
+                          # tomorrow" as GENERIC and only asks skills that
+                          # support the guessed type, so without it YouTube
+                          # Music won the show's own name (issue #1)
+                          supported_media=[MediaType.PODCAST, MediaType.AUDIO,
+                                           MediaType.GENERIC],
                           skill_icon=join(dirname(__file__), "ui", "icon.png"),
                           skill_voc_filename="voices_of_tomorrow",
                           **kwargs)

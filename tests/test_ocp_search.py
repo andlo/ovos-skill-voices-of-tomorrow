@@ -41,3 +41,21 @@ def test_artist_defaults_when_author_missing(skill):
     results = skill.search_voices_of_tomorrow("mystery story", None)
 
     assert results[0]["artist"] == "365tomorrows"
+
+
+
+def test_own_name_is_searched_for_generic_queries(monkeypatch):
+    """OCP classifies "play voices of tomorrow" as GENERIC and only asks
+    skills that support the guessed media type (#1)."""
+    from conftest import VoicesOfTomorrowSkill
+    from ovos_workshop.skills.common_play import OVOSCommonPlaybackSkill
+    seen = {}
+    monkeypatch.setattr(OVOSCommonPlaybackSkill, "__init__",
+                        lambda self, *a, **kw: seen.update(kw))
+    VoicesOfTomorrowSkill()
+    assert MediaType.GENERIC in seen["supported_media"]
+
+
+def test_own_name_gets_top_confidence(skill):
+    results = skill.search_voices_of_tomorrow("voices of tomorrow", MediaType.GENERIC)
+    assert results and all(r["match_confidence"] == 100 for r in results)
